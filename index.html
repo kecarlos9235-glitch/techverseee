@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TECHVERSE Careers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0b1221, #112a4b);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 100px 20px;
+      background: radial-gradient(circle at center, rgba(0,191,255,0.15) 0%, rgba(0,0,0,0.85) 100%);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://cdn.pixabay.com/photo/2021/07/29/18/44/technology-6508034_1280.jpg') no-repeat center center/cover;
+      opacity: 0.25;
+      z-index: 0;
+      filter: blur(3px);
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .brand {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      z-index: 2;
+    }
+
+    .brand img {
+      height: 350px;
+      width: auto;
+      filter: drop-shadow(0 0 20px #00bfff);
+      margin: 0;
+    }
+
+    .brand h1 {
+      font-family: "Orbitron", sans-serif;
+      font-size: 4em;
+      color: #00bfff;
+      margin: 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 25px #00bfff, 0 0 45px #00bfff;
+      animation: pulse 3s infinite alternate;
+      text-decoration: underline;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff; }
+      100% { text-shadow: 0 0 30px #00ffff, 0 0 60px #00bfff; }
+    }
+
+    /* RESPONSIVE DESIGN FOR MOBILE */
+    @media (max-width: 768px) {
+      .brand h1 {
+        font-size: 1em; /* Smaller font size for mobile */
+      }
+      .brand img {
+        height: 200px; /* Smaller logo height for mobile */
+      }
+      header {
+        padding: 50px 20px; /* Adjust header padding for mobile */
+      }
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      font-family: "Orbitron", sans-serif;
+      color: #00bfff;
+      border-bottom: 2px solid #00bfff;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+    }
+
+    p, a, em, strong, div, span, li {
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* ABOUT US */
+    #about {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #about::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: url('https://cdn.pixabay.com/photo/2021/08/03/12/32/digital-6520600_1280.png') no-repeat center right;
+      background-size: 450px;
+      opacity: 0.07;
+    }
+
+    #about p {
+      font-size: 1.1em;
+      line-height: 1.9;
+      color: #e0e0e0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* JOBS */
+    .jobs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .job {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .job:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .job img {
+      width: 60px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 10px #00bfff);
+    }
+
+    .job h3 {
+      font-family: "Orbitron", sans-serif;
+      color: #00bfff;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .job p {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.95em;
+      color: #ccc;
+    }
+
+    /* HOW TO APPLY */
+    #apply {
+      background: linear-gradient(145deg, rgba(0,191,255,0.1), rgba(0,0,0,0.6));
+      border: 1px solid rgba(0,191,255,0.3);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #apply::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://cdn.pixabay.com/photo/2021/07/06/04/22/network-6390623_1280.png') no-repeat center;
+      background-size: cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .apply-info {
+      line-height: 2;
+      font-size: 1.1em;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .apply-info a {
+      color: #00bfff;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .apply-info a:hover {
+      text-decoration: underline;
+    }
+
+    .apply-visual {
+      margin-top: 30px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .apply-visual img {
+      width: 120px;
+      filter: drop-shadow(0 0 20px #00bfff);
+    }
+
+    /* CEO SECTION */
+    .ceo-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .ceo-section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00bfff;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+    }
+
+    .ceo-info {
+      flex: 1;
+      font-size: 1.05em;
+      color: #e0e0e0;
+    }
+
+    .ceo-info strong {
+      color: #00bfff;
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.4em;
+    }
+
+    .ceo-info em {
+      display: block;
+      margin-top: 10px;
+      font-style: italic;
+      color: #b8e0ff;
+      line-height: 1.7;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #aaa;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img src="logo.png" alt="Techverse Logo">
+      <h1>TECHVERSE</h1>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      <strong>TECHVERSE</strong> is a technology-driven company that transforms ideas into real-world impact. We specialize in digital innovation, building tools, systems, and experiences that make life smarter and work more efficient. Our people thrive in an environment that values growth, collaboration, and creativity. At TECHVERSE, we are shaping technology and building the future with purpose.
+    </p>
+  </section>
+
+  <section id="career">
+    <h2>Career Opportunities</h2>
+    <div class="jobs">
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/source-code.png" alt="Software Engineer Icon">
+        <h3>Software Engineer</h3>
+        <p>Build reliable, scalable systems with cutting-edge technologies.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/design.png" alt="UI/UX Designer Icon">
+        <h3>UI/UX Designer</h3>
+        <p>Design user experiences that blend creativity with functionality.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/combo-chart.png" alt="Data Scientist Icon">
+        <h3>Data Scientist</h3>
+        <p>Extract powerful insights from complex datasets.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/shield.png" alt="Cybersecurity Analyst Icon">
+        <h3>Cybersecurity Analyst</h3>
+        <p>Defend digital infrastructure from evolving threats.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/android-os.png" alt="Mobile Developer Icon">
+        <h3>Mobile App Developer</h3>
+        <p>Create seamless and secure mobile applications.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/robot.png" alt="AI Engineer Icon">
+        <h3>AI Engineer</h3>
+        <p>Build smart, adaptive systems that think and learn.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/cloud.png" alt="Cloud Administrator Icon">
+        <h3>Cloud Administrator</h3>
+        <p>Manage scalable cloud systems for performance and reliability.</p>
+      </div>
+      <div class="job">
+        <img src="https://img.icons8.com/fluency/96/inspection.png" alt="QA Tester Icon">
+        <h3>QA Automation Tester</h3>
+        <p>Ensure flawless performance through automated testing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply">
+    <h2>How to Apply</h2>
+    <div class="apply-info">
+      <p>📧 Send your CV and portfolio to: <a href="mailto:hire@techverse.com">hire@techverse.com</a></p>
+      <p>📅 Deadline: November 30, 2025</p>
+      <p>📍 Location: Hybrid – Makati & Remote</p>
+      <div class="apply-visual">
+        <img src="https://img.icons8.com/fluency/96/resume.png" alt="Resume Icon">
+      </div>
+      <p style="margin-top: 20px; font-style: italic;">Join us and be part of something extraordinary, where innovation meets opportunity.</p>
+    </div>
+  </section>
+
+  <section id="ceo">
+    <h2>CEO</h2>
+    <div class="ceo-section">
+      <img src="photo.jpg" alt="Kelvin A. Carlos">
+      <div class="ceo-info">
+        <strong>KELVIN A. CARLOS</strong><br>
+        Chief Executive Officer, TECHVERSE
+        <em>"True innovation begins with courage. It is the courage to challenge the ordinary, to create with purpose, and to shape solutions that make a lasting difference. It takes vision to see beyond limits and determination to turn ideas into impact. At TECHVERSE, we believe that every great change starts with those bold enough to make it happen."</em>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 TECHVERSE. All Rights Reserved.
+  </footer>
+</body>
+</html>
